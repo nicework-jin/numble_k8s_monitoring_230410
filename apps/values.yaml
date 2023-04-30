@@ -1,4 +1,4 @@
-repoURL: https://github.com/nicework-jin/numble_k8s_monitoring_230410
+repoURL: https://github.com/kim-seo-hyun/k8s_monitoring
 
 apps:
   - name: argocd
