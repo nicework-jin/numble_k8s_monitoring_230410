@@ -41,7 +41,7 @@ spec:
     # If not specified, then the namespace of the Kibana resource
     # will be assumed.
     #
-    namespace: elastic
+    # namespace: default
   http:
     service:
       spec:

@@ -1,4 +1,4 @@
-repoURL: https://github.com/kim-seo-hyun/k8s_monitoring
+repoURL: https://github.com/waegaein/numble-example
 
 apps:
   - name: argocd

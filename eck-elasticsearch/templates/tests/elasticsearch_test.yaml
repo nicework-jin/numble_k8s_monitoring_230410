@@ -47,12 +47,12 @@ tests:
       monitoring:
         metrics:
           elasticsearchRefs:
-            - name: monitoring
-              namespace: observability
+          - name: monitoring
+            namespace: observability
         logs:
           elasticsearchRefs:
-            - name: monitoring
-              namespace: observability
+          - name: monitoring
+            namespace: observability
       transport:
         service:
           metadata:
@@ -65,19 +65,19 @@ tests:
           spec:
             type: LoadBalancer
       secureSettings:
-        - secretName: one-secure-settings-secret
-        - secretName: two-secure-settings-secret
+      - secretName: one-secure-settings-secret
+      - secretName: two-secure-settings-secret
       updateStrategy:
         changeBudget:
           maxSurge: 3
           maxUnavailable: 1
       remoteClusters:
-        - name: cluster-one
-          elasticsearchRef:
-            name: cluster-one
-        - name: cluster-two
-          elasticsearchRef:
-            name: cluster-two
+      - name: cluster-one
+        elasticsearchRef:
+          name: cluster-one
+      - name: cluster-two
+        elasticsearchRef:
+          name: cluster-two
     release:
       name: quickstart
     asserts:
@@ -101,12 +101,12 @@ tests:
           value:
             metrics:
               elasticsearchRefs:
-                - name: monitoring
-                  namespace: observability
+              - name: monitoring
+                namespace: observability
             logs:
               elasticsearchRefs:
-                - name: monitoring
-                  namespace: observability
+              - name: monitoring
+                namespace: observability
       - equal:
           path: spec.transport
           value:
@@ -125,8 +125,8 @@ tests:
       - equal:
           path: spec.secureSettings
           value:
-            - secretName: one-secure-settings-secret
-            - secretName: two-secure-settings-secret
+          - secretName: one-secure-settings-secret
+          - secretName: two-secure-settings-secret
       - equal:
           path: spec.updateStrategy
           value:
@@ -136,12 +136,12 @@ tests:
       - equal:
           path: spec.remoteClusters
           value:
-            - name: cluster-one
-              elasticsearchRef:
-                name: cluster-one
-            - name: cluster-two
-              elasticsearchRef:
-                name: cluster-two
+          - name: cluster-one
+            elasticsearchRef:
+              name: cluster-one
+          - name: cluster-two
+            elasticsearchRef:
+              name: cluster-two
   - it: should render node roles properly
     values:
       - ../../examples/hot-warm-cold.yaml
